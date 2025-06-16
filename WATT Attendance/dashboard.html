@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attendance</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+
+      <!-- Sidebar -->
+      <div
+        class="col-12 col-md-3 col-lg-2 bg-dark text-white d-flex flex-column justify-content-between p-3 position-sticky top-0"
+        style="height: 100vh;">
+        <div>
+          <!-- Brand -->
+          <nav class="navbar bg-dark border-bottom border-white mb-3" data-bs-theme="dark">
+            <a class="navbar-brand text-white" href="#">
+              <i class="bi bi-house-door"></i>
+              <span class="d-none d-sm-inline ms-2">Home</span>
+            </a>
+          </nav>
+
+          <!-- Navigation Links -->
+          <nav class="nav flex-column">
+            <a class="nav-link text-white" href="#"><i class="bi bi-speedometer2"></i><span
+                class="ms-2">Dashboard</span></a>
+            <a class="nav-link text-white" href="attendanceLog.html"><i class="bi bi-calendar-check"></i><span
+                class="ms-2">Attendance Logs </span></a>
+            <a class="nav-link text-white" href="index.html"><i class="bi bi-device-hdd"></i><span
+                class="ms-2">Devices</span></a>
+            <a class="nav-link text-white" href="/WATT Attendance/student/student.html"><i
+                class="bi bi-person-lines-fill"></i><span class="ms-2">Student List</span></a>
+            <a class="nav-link text-white" href="/WATT Attendance/staff/staff.html"><i
+                class="bi bi-person-workspace"></i><span class="ms-2">Staff List</span></a>
+            <a class="nav-link text-white" href="user.html"><i class="bi bi-person-circle"></i><span class="ms-2">Users
+                Profile</span></a>
+          </nav>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="border-top pt-3">
+          <a class="nav-link text-white text-center" href="#"><i class="bi bi-arrow-bar-right me-2"></i>Logout</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-12 col-md-9 col-lg-10 p-0">
+        <main class="d-flex flex-column h-100">
+
+          <!-- Top Navbar -->
+          
+            <h4  class="mb-5"> </h4>
+
+
+          <!-- Page Content -->
+          <section class="px-4">
+            <!-- Attendance Summary -->
+            <div class="row text-center mb-4">
+              <div class="col-3  ">
+                <div class="card border-success shadow  ">
+                  <div class="card-body">
+                    <h6 class="text-success"> Present</h6>
+                    <p class=" fs-4 fw-bold mb-0"> 8 Days</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="card border-danger shadow">
+                  <div class="card-body">
+                    <h6 class="text-danger">Absent</h6>
+                    <p class="fs-4 fw-bold mb-0">3 Days</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="card border-warning shadow">
+                  <div class="card-body">
+                    <h6 class="text-warning">Late</h6>
+                    <p class="fs-4 fw-bold mb-0">2 Days</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="card border-primary shadow">
+                  <div class="card-body">
+                    <h6 class="text-primary">Attendance %</h6>
+                    <p class="fs-4 fw-bold mb-0">91.7%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- Attendance Log Table -->
+             <nav class="navbar navbar-expand-lg bg-body-tertiary px-3 mb-3">
+  <div class="container-fluid">
+    <span class="navbar-brand fw-bold">📆 Daily Attendance Log</span>
+
+    <!-- Class Dropdown -->
+    <div class="dropdown me-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Class
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item active" href="#">I-A</a></li>
+        <li><a class="dropdown-item" href="#">I-B</a></li>
+        <li><a class="dropdown-item" href="#">I-C</a></li>
+        <li><a class="dropdown-item" href="#">II-A</a></li>
+        <li><a class="dropdown-item" href="#">II-B</a></li>
+        <li><a class="dropdown-item" href="#">II-C</a></li>
+        <li><a class="dropdown-item" href="#">III-A</a></li>
+        <li><a class="dropdown-item" href="#">III-B</a></li>
+        <li><a class="dropdown-item" href="#">III-C</a></li>
+        <li><a class="dropdown-item" href="#">IV-A</a></li>
+        <li><a class="dropdown-item" href="#">IV-B</a></li>
+        <li><a class="dropdown-item" href="#">IV-C</a></li>
+      </ul>
+    </div>
+
+    <!-- Status Dropdown -->
+    <div class="dropdown me-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Status
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        <li><a class="dropdown-item active" href="#">Present</a></li>
+        <li><a class="dropdown-item" href="#">Absent</a></li>
+        <li><a class="dropdown-item" href="#">Late</a></li>
+      </ul>
+    </div>
+
+    <!-- Date From -->
+    <div class="me-3">
+      <label for="dateFrom" class="form-label mb-0">Choose Date From:</label>
+      <input type="date" id="dateFrom" class="form-control form-control-sm">
+    </div>
+
+    <!-- Date To -->
+    <div class="me-3">
+      <label for="dateTo" class="form-label mb-0">Choose Date To:</label>
+      <input type="date" id="dateTo" class="form-control form-control-sm">
+    </div>
+
+    <!-- Search -->
+    <form class="d-flex ms-auto" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search class" aria-label="Search">
+      <button class="btn btn-outline-primary" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+            <div class="mb-4">
+              <div class="table-responsive bg-white p-3 rounded shadow">
+                <table class="table table-bordered table-hover">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Student Name</th>
+                      <th>S_ID</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Check-In</th>
+                      <th>Check-Out</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> <a><i class="bi bi-person-circle"></i></a> Rahul</td>
+                      <td>325689</td>
+                      <td>08-Jun-2025</td>
+                      <td><span class="badge bg-success">Present</span></td>
+                      <td>08:05 AM</td>
+                      <td>02:30 PM</td>
+                    </tr>
+                    <tr>
+                      <td> <a><i class="bi bi-person-circle"></i></a></aA>Ram</td>
+                      <td>325689</td>
+                      <td>08-Jun-2025</td>
+                      <td><span class="badge bg-success">Present</span></td>
+                      <td>08:05 AM</td>
+                      <td>02:30 PM</td>
+                    </tr>
+                    <tr>
+                      <td> <a><i class="bi bi-person-circle"></i></a>Sam</td>
+                      <td>325689</td>
+                      <td>08-Jun-2025</td>
+                      <td><span class="badge bg-danger">Absent</span></td>
+                      <td>--</td>
+                      <td>--</td>
+                    </tr>
+                    <tr>
+                      <td> <a><i class="bi bi-person-circle"></i></a>Tom</td>
+                      <td>325689</td>
+                      <td>07-Jun-2025</td>
+                      <td><span class="badge bg-warning text-dark">Late</span></td>
+                      <td>08:45 AM</td>
+                      <td>02:30 PM</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Calendar-->
+            
+
+            <!-- Export Button -->
+            <div class="col-3 mt-3">
+              <div class="text-start m-0 p-0">
+                <button class="btn btn-outline-primary" onclick="alert('Hello')">
+                  ⬇️ Download Attendance Report
+                </button>
+              </div>
+            </div>
+          </section>
+      </div>
+      </main>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+
+  <!-- Device Fetch Script -->
+  <!-- <script>
+    fetch('./res/json/devices.json')
+      .then(response => response.ok ? response.json() : [])
+      .then(data => {
+        const assignedDevices = document.getElementById("assignedDevices");
+        assignedDevices.innerHTML = data
+          .filter(device => device.assignedTo === "admin")
+          .map(device => `
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <div class="card text-center h-100">
+                <div class="card-body">
+                  <h5 class="card-title">${device.deviceName}</h5>
+                  <a href="#" class="btn btn-primary mt-2">View Attendance</a>
+                </div>
+              </div>
+            </div>
+          `).join('');
+      })
+      .catch(error => console.error('Error loading device data:', error));
+  </script> -->
+
+
+
+</body>
+
+</html>

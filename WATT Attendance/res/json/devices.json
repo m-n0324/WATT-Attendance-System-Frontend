@@ -1,0 +1,177 @@
+[
+  {
+    "id": "1",
+    "deviceName": "Class XII-A",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "2",
+    "deviceName": "Class XII-B",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "3",
+    "deviceName": "Class XII-C",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "4",
+    "deviceName": "Class XII-D",
+    "deviceStatus": true,
+    "assignedTo": "mansi"
+  },
+  {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "kuber"
+  },
+  {
+    "id": "1",
+    "deviceName": "Class XII-A",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "2",
+    "deviceName": "Class XII-B",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "3",
+    "deviceName": "Class XII-C",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "4",
+    "deviceName": "Class XII-D",
+    "deviceStatus": true,
+    "assignedTo": "mansi"
+  },
+  {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "kuber"
+  },
+  {
+    "id": "1",
+    "deviceName": "Class XII-A",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "2",
+    "deviceName": "Class XII-B",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "3",
+    "deviceName": "Class XII-C",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "4",
+    "deviceName": "Class XII-D",
+    "deviceStatus": true,
+    "assignedTo": "mansi"
+  },
+  {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "kuber"
+  },
+  {
+    "id": "1",
+    "deviceName": "Class XII-A",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "2",
+    "deviceName": "Class XII-B",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "3",
+    "deviceName": "Class XII-C",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "4",
+    "deviceName": "Class XII-D",
+    "deviceStatus": true,
+    "assignedTo": "mansi"
+  },
+  {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "kuber"
+  },
+  {
+    "id": "1",
+    "deviceName": "Class XII-A",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "2",
+    "deviceName": "Class XII-B",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "3",
+    "deviceName": "Class XII-C",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "4",
+    "deviceName": "Class XII-D",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+   {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+   {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+   {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+   {
+    "id": "5",
+    "deviceName": "Class XII-E",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  }
+
+]
