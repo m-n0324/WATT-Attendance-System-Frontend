@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WATT Attendance - Admin</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Active sidebar link highlight */
+    .active-link {
+      background-color: #495057;
+      color: #fff !important;
+      border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    .nav-link-item:hover {
+      background-color: #6c757d;
+      color: #fff !important;
+    }
+
+    iframe {
+      border: none;
+    }
+
+    /* Back button container */
+    #backButtonContainer {
+      display: none;
+      margin: 0 1rem 1rem 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+
+      <!-- Sidebar -->
+      <div class="col-12 col-md-3 col-lg-2 bg-dark text-white d-flex flex-column justify-content-between pe-0 position-sticky top-0"
+        style="height: 100vh;">
+        <div>
+          <!-- Brand -->
+          <nav class="navbar bg-dark border-bottom border-white mb-3" data-bs-theme="dark">
+            <a class="navbar-brand text-white" href="#">
+              <i class="bi bi-house-door"></i>
+              <span class="d-none d-sm-inline ms-2">Home</span>
+            </a>
+          </nav>
+
+          <!-- Navigation Links -->
+          <nav class="nav flex-column">
+            <a class="nav-link text-white nav-link-item active-link" data-page="dashboard.html" href="#">
+              <i class="bi bi-speedometer2"></i><span class="ms-2">Dashboard</span>
+            </a>
+            <a class="nav-link text-white nav-link-item" data-page="attendanceLog.html" href="#">
+              <i class="bi bi-calendar-check"></i><span class="ms-2">Attendance Logs</span>
+            </a>
+            <a class="nav-link text-white nav-link-item" data-page="device.html" href="#">
+              <i class="bi bi-device-hdd"></i><span class="ms-2">Devices</span>
+            </a>
+            <a class="nav-link text-white nav-link-item" data-page="student/student.html" href="#">
+              <i class="bi bi-person-lines-fill"></i><span class="ms-2">Student List</span>
+            </a>
+            <a class="nav-link text-white nav-link-item" data-page="staff/staff.html" href="#">
+              <i class="bi bi-person-workspace"></i><span class="ms-2">Staff List</span>
+            </a>
+            <a class="nav-link text-white nav-link-item" data-page="user.html" href="#">
+              <i class="bi bi-person-circle"></i><span class="ms-2">Users Profile</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="border-top pt-3">
+          <a class="nav-link text-white text-center" href="#"><i class="bi bi-arrow-bar-right me-2"></i>Logout</a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="col-12 col-md-9 col-lg-10 p-0">
+        <main class="d-flex flex-column h-100">
+
+          <!-- Top Navbar -->
+          <nav class="navbar navbar-expand-lg bg-body-tertiary px-3 mb-2">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+              <!-- Page Title -->
+              <strong class="navbar-brand mb-0" id="pageTitle">Dashboard</strong>
+
+              <!-- Dynamic Controls (Student/Staff Page Only) -->
+              <div id="pageControls" class="d-flex align-items-center"></div>
+            </div>
+          </nav>
+
+          <!-- Back Button (below navbar) -->
+          <div id="backButtonContainer">
+            <a href="#" id="backButton" class="btn btn-outline-dark">
+              <i class="bi bi-arrow-left"></i> Back
+            </a>
+          </div>
+
+          <!-- Content Container -->
+          <div id="pageContent" class="container-fluid p-3 overflow-auto">
+            <iframe src="dashboard.html" id="iframeContent" class="w-100" style="height:80vh;"></iframe>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link-item');
+    const iframe = document.getElementById('iframeContent');
+    const pageTitle = document.getElementById('pageTitle');
+    const pageControls = document.getElementById('pageControls');
+    const backButtonContainer = document.getElementById('backButtonContainer');
+    const backButton = document.getElementById('backButton');
+
+    // Sidebar navigation
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const page = this.dataset.page;
+        iframe.src = page;
+        pageTitle.textContent = this.textContent.trim();
+
+        // remove active from all, set active to current
+        navLinks.forEach(l => l.classList.remove('active-link'));
+        this.classList.add('active-link');
+
+        // reset navbar controls
+        loadPageControls(getPageKey(page));
+
+        // Back button show/hide
+        if (page.includes("dashboard")) {
+          backButtonContainer.style.display = "none";
+        } else {
+          backButtonContainer.style.display = "block";
+        }
+      });
+    });
+
+    // Back button functionality
+    backButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      iframe.src = "dashboard.html";
+      pageTitle.textContent = "Dashboard";
+      backButtonContainer.style.display = "none";
+
+      // Reset sidebar active link
+      navLinks.forEach(l => l.classList.remove('active-link'));
+      navLinks[0].classList.add('active-link');
+
+      loadPageControls(null);
+    });
+
+    // Helper to determine page key
+    function getPageKey(page) {
+      if (page.includes("student")) return "student";
+      if (page.includes("staff")) return "staff";
+      return null;
+    }
+
+    // Function to load page-specific controls into navbar
+    function loadPageControls(page) {
+      pageControls.innerHTML = "";
+
+      if (page === "student") {
+        pageControls.innerHTML = `
+          <a href="/WATT Attendance/frontend/student/addNewStudent.html" class="btn btn-primary me-3">Add New</a>
+          <input id="searchClass" class="form-control me-2" type="search" placeholder="Class" style="max-width:120px;">
+          <input id="searchSection" class="form-control me-2" type="search" placeholder="Section" style="max-width:120px;">
+          <button class="btn btn-outline-primary me-2" type="button" onclick="document.getElementById('iframeContent').contentWindow.filterTable()">Search</button>
+          <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('iframeContent').contentWindow.resetFilter()">Reset</button>
+        `;
+      }
+
+      if (page === "staff") {
+        pageControls.innerHTML = `
+          <a href="/WATT Attendance/frontend/staff/addStaff.html" class="btn btn-primary me-3">Add Staff</a>
+        `;
+      }
+    }
+
+    // Expose to iframe
+    window.loadPageControls = loadPageControls;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "1",
+    "deviceName": "Class I",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "2",
+    "deviceName": "Class II",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "3",
+    "deviceName": "Class III",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "4",
+    "deviceName": "Class IV",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "5",
+    "deviceName": "Class V",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "6",
+    "deviceName": "Class VI",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "7",
+    "deviceName": "Class VII",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "8",
+    "deviceName": "Class VIII",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "9",
+    "deviceName": "Class IX",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "10",
+    "deviceName": "Class X ",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "11",
+    "deviceName": "Class XI",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  },
+  {
+    "id": "12",
+    "deviceName": "Class XII",
+    "deviceStatus": true,
+    "assignedTo": "admin"
+  }
+  
+
+  
+
+]
