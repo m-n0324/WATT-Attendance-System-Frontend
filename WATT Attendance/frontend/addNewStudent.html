@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Form</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-container {
+      flex-grow: 1;
+      padding: 20px;
+      background: #f9f9f9;
+      overflow-y: auto;
+    }
+
+    fieldset {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .action-buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    #backButtonContainer {
+      margin: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="container form-container">
+      <form id="studentForm">
+        <fieldset>
+          <legend class="text-center" id="formHeading">Add New Student</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Student ID</label>
+              <input type="text" class="form-control" name="studentId" id="studentId" required readonly>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="name" id="name" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Class</label>
+              <input type="text" class="form-control" name="class" id="class" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Section</label>
+              <input type="text" class="form-control" name="section" id="section" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Gender</label>
+              <select class="form-select" name="gender" id="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" name="dob" id="dob">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Contact No</label>
+              <input type="tel" class="form-control" name="contact" id="contact">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" name="address" id="address">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" name="city" id="city">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">State</label>
+              <input type="text" class="form-control" name="state" id="state">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Pincode</label>
+              <input type="text" class="form-control" name="pincode" id="pincode">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="mt-4">
+          <legend class="text-center">Other Details</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Father's Name</label>
+              <input type="text" class="form-control" name="fatherName" id="fatherName">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Mother's Name</label>
+              <input type="text" class="form-control" name="motherName" id="motherName">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Father's Mobile</label>
+              <input type="tel" class="form-control" name="fatherMobile" id="fatherMobile">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Mother's Mobile</label>
+              <input type="tel" class="form-control" name="motherMobile" id="motherMobile">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Father's Occupation</label>
+              <input type="text" class="form-control" name="fatherOccupation" id="fatherOccupation">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Mother's Occupation</label>
+              <input type="text" class="form-control" name="motherOccupation" id="motherOccupation">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Admission Number</label>
+              <input type="text" class="form-control" name="admissionNumber" id="admissionNumber" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Admission Date</label>
+              <input type="date" class="form-control" name="admissionDate" id="admissionDate">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Transport Mode</label>
+              <input type="text" class="form-control" name="transport" id="transport">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="action-buttons justify-content-center">
+          <button type="submit" class="btn btn-primary">Save Student</button>
+          <button type="button" class="btn btn-secondary" onclick="window.location.href='student.html'">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const form = document.getElementById('studentForm');
+    const formHeading = document.getElementById('formHeading');
+    const urlParams = new URLSearchParams(window.location.search);
+    const studentId = urlParams.get('id');
+
+    // Prefill form if in edit mode
+    if (studentId) {
+      formHeading.innerText = "Edit Student Details";
+      const students = JSON.parse(localStorage.getItem('students')) || [];
+      const student = students.find(s => s.studentId === studentId);
+      if (student) {
+        Object.keys(student).forEach(key => {
+          const input = document.getElementById(key);
+          if (input) {
+            input.value = student[key];
+          }
+        });
+      }
+    } else {
+      // Auto-generate a new student ID
+      const students = JSON.parse(localStorage.getItem('students')) || [];
+      const newId = S${ students.length + 101
+    };
+    document.getElementById('studentId').value = newId;
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      let students = JSON.parse(localStorage.getItem('students')) || [];
+      const newStudent = {};
+      new FormData(form).forEach((value, key) => newStudent[key] = value);
+
+      const existingIndex = students.findIndex(s => s.studentId === newStudent.studentId);
+      if (existingIndex > -1) {
+        // Update existing student
+        students[existingIndex] = newStudent;
+        alert('Student updated successfully!');
+      } else {
+        // Add new student
+        students.push(newStudent);
+        alert('Student added successfully!');
+      }
+
+      localStorage.setItem('students', JSON.stringify(students));
+      window.location.href = 'student.html';
+    });
+
+    // Tell the parent to update the title and back button
+    if (window.parent) {
+      window.parent.postMessage({
+        type: 'updateTitle',
+        title: studentId ? 'Edit Student' : 'Add New Student',
+        showBack: true
+      }, '*');
+    }
+  </script>
+</body>
+
+</html>

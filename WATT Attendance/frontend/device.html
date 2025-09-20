@@ -6,74 +6,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Devices (Class Wise)</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row min-vh-100">
-
-      <!-- Main Content -->
-      <div class="col-12 p-0">
-        <main class="d-flex flex-column h-100">
-
-          <!-- Device List -->
-          <div class="container mt-3">
-            <div id="deviceContainer" class="row gy-4">
-              <!-- Device cards will appear here -->
-            </div>
-          </div>
-
-        </main>
+  <div class="container mt-3">
+    <div id="deviceContainer" class="row gy-4">
       </div>
-    </div>
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // ✅ Example: Devices for each class (1–12)
-    let devices = [
-      { class: "1", deviceId: "DEV-1", deviceName: "RFID Scanner Class 1" },
-      { class: "2", deviceId: "DEV-2", deviceName: "RFID Scanner Class 2" },
-      { class: "3", deviceId: "DEV-3", deviceName: "RFID Scanner Class 3" },
-      { class: "4", deviceId: "DEV-4", deviceName: "RFID Scanner Class 4" },
-      { class: "5", deviceId: "DEV-5", deviceName: "RFID Scanner Class 5" },
-      { class: "6", deviceId: "DEV-6", deviceName: "RFID Scanner Class 6" },
-      { class: "7", deviceId: "DEV-7", deviceName: "RFID Scanner Class 7" },
-      { class: "8", deviceId: "DEV-8", deviceName: "RFID Scanner Class 8" },
-      { class: "9", deviceId: "DEV-9", deviceName: "RFID Scanner Class 9" },
-      { class: "10", deviceId: "DEV-10", deviceName: "RFID Scanner Class 10" },
-      { class: "11", deviceId: "DEV-11", deviceName: "RFID Scanner Class 11" },
-      { class: "12", deviceId: "DEV-12", deviceName: "RFID Scanner Class 12" }
-    ];
+    const devices = [{
+      class: "1",
+      deviceId: "DEV-1",
+      deviceName: "Class 1 Device"
+    }, {
+      class: "2",
+      deviceId: "DEV-2",
+      deviceName: "Class 2 Device"
+    }, {
+      class: "3",
+      deviceId: "DEV-3",
+      deviceName: "Class 3 Device"
+    }, {
+      class: "4",
+      deviceId: "DEV-4",
+      deviceName: "Class 4 Device"
+    }, {
+      class: "5",
+      deviceId: "DEV-5",
+      deviceName: "Class 5 Device"
+    }, {
+      class: "6",
+      deviceId: "DEV-6",
+      deviceName: "Class 6 Device"
+    }, {
+      class: "7",
+      deviceId: "DEV-7",
+      deviceName: "Class 7 Device"
+    }, {
+      class: "8",
+      deviceId: "DEV-8",
+      deviceName: "Class 8 Device"
+    }, {
+      class: "9",
+      deviceId: "DEV-9",
+      deviceName: "Class 9 Device"
+    }, {
+      class: "10",
+      deviceId: "DEV-10",
+      deviceName: "Class 10 Device"
+    }, {
+      class: "11",
+      deviceId: "DEV-11",
+      deviceName: "Class 11 Device"
+    }, {
+      class: "12",
+      deviceId: "DEV-12",
+      deviceName: "Class 12 Device"
+    }, ];
 
     function renderDevices() {
       const container = document.getElementById('deviceContainer');
       container.innerHTML = '';
+
       devices.forEach(device => {
-        container.innerHTML += `
-        <div class="col-12 col-md-6 col-lg-4">
+        const col = document.createElement('div');
+        col.className = "col-12 col-md-6 col-lg-4";
+        col.innerHTML = `
           <div class="card h-100 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">Class ${device.class}</h5>
-              <p class="mb-1"><strong>Device ID:</strong> ${device.deviceId}</p>
-              <p class="mb-1"><strong>Device Name:</strong> ${device.deviceName}</p>
-              <a href="viewAttendance.html?class=${device.class}" class="btn btn-sm btn-primary mt-2">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title mb-2">Class ${device.class}</h5>
+              <p class="mb-2"><strong>Device ID:</strong> ${device.deviceId}</p>
+              <a href="viewAttendance.html?class=${device.class}" class="btn btn-primary mt-auto">
                 <i class="bi bi-eye"></i> View Attendance
               </a>
             </div>
           </div>
-        </div>`;
+        `;
+        container.appendChild(col);
       });
     }
 
-    // Initial render
     renderDevices();
+
+    // ✅ Tell the parent to update the title
+    if (window.parent) {
+      window.parent.postMessage({
+        type: 'updateTitle',
+        title: 'Devices',
+        showBack: false
+      }, '*');
+    }
   </script>
 </body>
 
